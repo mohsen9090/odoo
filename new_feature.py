@@ -1,7 +1,14 @@
-# new_feature.py
+# test_new_feature.py
 
-def sample_function():
-    print("This is a sample function in the new feature.")
+import unittest
+from new_feature import sample_function
 
-if __name__ == "__main__":
-    sample_function()
+class TestNewFeature(unittest.TestCase):
+
+    def test_sample_function(self):
+        # چون sample_function فقط چیزی را پرینت می‌کند، نمی‌توانیم از assert برای بررسی آن استفاده کنیم.
+        # اینجا فقط به عنوان نمونه تست تعریف شده است.
+        self.assertIsNone(sample_function())  # چون این تابع None برمی‌گرداند.
+
+if __name__ == '__main__':
+    unittest.main()
